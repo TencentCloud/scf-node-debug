@@ -1,7 +1,7 @@
 # SCF CLI
 这是一个用于本地测试运行云函数的小工具，我们提供了几种测试模型作为云函数的入参'event'，持续更新中。
 <br>
-[English doc](./README_en.md)
+[English DOC](./README_en.md)
 [中文版文档](./README.md)
 
 
@@ -12,7 +12,7 @@ npm install @tencent/SCF_CLI -g
 
 ## Quick Start
 ```
-tcb init
+scf init
 ```
 ### Options
 * host 用于开启本地服务的host

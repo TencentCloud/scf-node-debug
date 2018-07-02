@@ -10,7 +10,7 @@ npm install @tencent/SCF_CLI -g
 
 ## Quick Start
 ```
-tcb init
+scf init
 ```
 ### Options
 * host The host To Start The Mock Server
