@@ -22,5 +22,16 @@
   },
   "bin": {
     "scf": "./index.js"
+  },
+  "devDependencies": {
+    "commitizen": "^2.10.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^5.0.1",
+    "prettier-eslint": "^8.8.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 // external depend
-const program = require('commander');
+const program = require('commander')
 const inquirer = require('inquirer')
 const chalk = require('chalk')
 const _ = require('lodash')
@@ -25,9 +25,7 @@ const DEFAULT_GLOBAL_CONFIG = {
 const testModelMap = Object.keys(DEFAULT_GLOBAL_CONFIG.mock.testModel)
 
 // 辅助信息
-program
-  .version(pkgJson.version)
-  .description(logo)
+program.version(pkgJson.version).description(logo)
 
 console.log(process.cwd())
 
@@ -36,10 +34,10 @@ program
   .command('init [host][port][debug]')
   .alias('i')
   .description('Init The TestCli For Your App')
-  .option("-h, --host", "Input the host To Start The Mock Server")
-  .option("-p, --port", "Input the port To Start The Mock Server")
-  .option("-d, --debug", "Start Supervisor")
-  .action(function (env, options) {
+  .option('-h, --host', 'Input the host To Start The Mock Server')
+  .option('-p, --port', 'Input the port To Start The Mock Server')
+  .option('-d, --debug', 'Start Supervisor')
+  .action(function(env, options) {
     /**************************************************
                 		start of interactive
     ***************************************************/
@@ -49,7 +47,7 @@ program
       type: 'input',
       name: 'entry',
       message: '请输入入口文件地址(相对路径)',
-      validate: function (input) {
+      validate: function(input) {
         const scriptPath = require.resolve(path.resolve(process.cwd(), input))
         if (!input) {
           return '请输入入口文件地址'
@@ -63,7 +61,7 @@ program
       name: 'handler',
       default: DEFAULT_SCF_CONFIG.handler,
       message: '请输入入口执行方法名称',
-      validate: function (input) {
+      validate: function(input) {
         return true
       }
     })
@@ -73,7 +71,7 @@ program
       name: 'timeout',
       default: DEFAULT_SCF_CONFIG.timeout,
       message: '请输入超时时间限制(单位：s)',
-      validate: function (input) {
+      validate: function(input) {
         if (+input <= 30 && +input >= 1) {
           return true
         }
@@ -92,7 +90,7 @@ program
         }
       }),
       message: '请选择测试模版',
-      validate: function (input) {
+      validate: function(input) {
         return true
       }
     })
@@ -107,25 +105,32 @@ program
         debug: options.debug,
         scfConfig: answers
       }
-      testCli.init(commandConfig, (data) => {
-        logger.info(`Server has listened [IP]:${DEFAULT_GLOBAL_CONFIG.host} [PORT]:${DEFAULT_GLOBAL_CONFIG.port}. http://localhost:3000`)
+      testCli.init(commandConfig, data => {
+        logger.info(
+          `Server has listened [IP]:${DEFAULT_GLOBAL_CONFIG.host} [PORT]:${
+            DEFAULT_GLOBAL_CONFIG.port
+          }. http://localhost:3000`
+        )
       })
-    });
-  });
+    })
+  })
 
 // no command
 if (!process.argv.slice(2).length) {
-  program.outputHelp((txt) => {
+  program.outputHelp(txt => {
     return txt
   })
 }
 // error on unknown commands
-program.on('command:*', function () {
-  console.warn('Invalid command: %s\nSee --help for a list of available commands.', program.args.join(' '));
+program.on('command:*', function() {
+  console.warn(
+    'Invalid command: %s\nSee --help for a list of available commands.',
+    program.args.join(' ')
+  )
 
-  program.outputHelp((txt) => {
+  program.outputHelp(txt => {
     return txt
   })
-});
+})
 
 program.parse(process.argv)
