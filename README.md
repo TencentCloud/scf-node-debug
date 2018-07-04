@@ -1,4 +1,9 @@
-# SCF CLI
+# SCF CLI 
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+[![NPM Version](https://img.shields.io/npm/v/scf-cli.svg?style=flat)](https://www.npmjs.com/package/scf-cli)
+
+
+<br>
 这是一个用于本地测试运行云函数的小工具，我们提供了几种测试模型作为云函数的入参'event'，持续更新中。
 <br>
 [English DOC](./README_en.md)
