@@ -8,11 +8,11 @@ const _ = require('lodash')
 const path = require('path')
 
 // internal depend
-const pkgJson = require('./package.json')
-const config = require('./config/config.development')
-const logo = require('./widget/slogan')
-const testCli = require('./bootstrap')
-const logger = require('./lib/logger')
+const pkgJson = require('../package.json')
+const config = require('../lib/debug/config/config.development')
+const logo = require('../lib/debug/widget/slogan')
+const testCli = require('../lib/debug/bootstrap')
+const logger = require('../lib/debug/lib/logger')
 
 // scf配置
 const DEFAULT_SCF_CONFIG = config.scfConfig
@@ -27,7 +27,7 @@ const testModelMap = Object.keys(DEFAULT_GLOBAL_CONFIG.mock.testModel)
 // 辅助信息
 program.version(pkgJson.version).description(logo)
 
-console.log(process.cwd())
+console.log('当前绝对路径: ', process.cwd())
 
 // 初始化调试工具
 program
