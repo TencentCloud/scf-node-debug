@@ -21,20 +21,36 @@
   },
   "scripts": {
     "dev": "supervisor ./bootstrap.js",
-    "release": "standard-version"
+    "release": "standard-version",
+    "cover": "istanbul cover _mocha -- test/*.test.js -R spec",
+    "test": "mocha test/*.js"
   },
   "bin": {
     "scf": "./bin/index.js"
   },
+  "description": "本地测试运行云函数的小工具",
   "devDependencies": {
+    "assert": "^1.4.1",
+    "bdd-stdin": "^0.2.0",
+    "chai": "^4.1.2",
+    "command-line-test": "^1.0.10",
     "commitizen": "^2.10.1",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.0.1",
-    "standard-version": "^4.4.0"
+    "istanbul": "^1.0.0-alpha.2",
+    "mocha": "^5.2.0",
+    "should": "^13.2.1",
+    "standard-version": "^4.4.0",
+    "supertest": "^3.1.0"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "keywords": [
+    "scf",
+    "cli",
+    "debug"
+  ]
 }

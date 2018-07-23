@@ -25,18 +25,19 @@ const DEFAULT_GLOBAL_CONFIG = {
 const testModelMap = Object.keys(DEFAULT_GLOBAL_CONFIG.mock.testModel)
 
 // 辅助信息
-program.version(pkgJson.version).description(logo)
-
-console.log('当前绝对路径: ', process.cwd())
+program
+  .version(pkgJson.version)
+  .description(`${pkgJson.description}\n${logo}`)
+  .usage('init|i [options]')
 
 // 初始化调试工具
 program
   .command('init [host][port][debug]')
   .alias('i')
   .description('Init The TestCli For Your App')
-  .option('-h, --host', 'Input the host To Start The Mock Server')
-  .option('-p, --port', 'Input the port To Start The Mock Server')
-  .option('-d, --debug', 'Start Supervisor')
+  .option('-h, --host [host]', 'Input the host To Start The Mock Server')
+  .option('-p, --port [port]', 'Input the port To Start The Mock Server')
+  .option('-d, --debug [debug]', 'Start Supervisor')
   .action(function(env, options) {
     /**************************************************
                 		start of interactive
@@ -107,9 +108,9 @@ program
       }
       testCli.init(commandConfig, data => {
         logger.info(
-          `Server has listened [IP]:${DEFAULT_GLOBAL_CONFIG.host} [PORT]:${
-            DEFAULT_GLOBAL_CONFIG.port
-          }. http://localhost:3000`
+          `Server has listened [IP]:${commandConfig.host} [PORT]:${
+            commandConfig.port
+          }. http://${commandConfig.host}:${commandConfig.port}`
         )
       })
     })
@@ -121,6 +122,7 @@ if (!process.argv.slice(2).length) {
     return txt
   })
 }
+
 // error on unknown commands
 program.on('command:*', function() {
   console.warn(
