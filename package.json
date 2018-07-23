@@ -1,6 +1,6 @@
 {
   "name": "scf-cli",
-  "version": "0.0.6-alpha",
+  "version": "0.0.7-alpha",
   "main": "./bootstrap.js",
   "author": "louiswu",
   "license": "MIT",
