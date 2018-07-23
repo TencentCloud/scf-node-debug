@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.0.8-alpha"></a>
+## [0.0.8-alpha](https://github.com/TencentCloud/scf-node-debug/compare/v0.0.7-alpha...v0.0.8-alpha) (2018-07-23)
+
+
+
 <a name="0.0.7-alpha"></a>
 ## [0.0.7-alpha](https://github.com/TencentCloud/scf-node-debug/compare/v0.0.6-alpha...v0.0.7-alpha) (2018-07-23)
 
