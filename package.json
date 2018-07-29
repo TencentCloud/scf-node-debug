@@ -1,6 +1,6 @@
 {
   "name": "scf-cli",
-  "version": "0.0.9-alpha",
+  "version": "0.0.10-alpha",
   "main": "./bin/index.js",
   "author": "louiswu",
   "license": "MIT",
@@ -22,9 +22,10 @@
   },
   "scripts": {
     "dev": "supervisor ./bootstrap.js",
-    "release": "standard-version",
     "cover": "istanbul cover _mocha -- test/*.test.js -R spec",
-    "test": "mocha test/*.js"
+    "test": "mocha test/*.js",
+    "release": "standard-version",
+    "publish": "npm publish && git push --tags"
   },
   "bin": {
     "scf": "./bin/index.js"
