@@ -50,7 +50,7 @@
     }
   },
   "keywords": [
-    "scf",
+    "serverless cloud function",
     "cli",
     "debug"
   ]
