@@ -1,6 +1,6 @@
 {
   "name": "scf-cli",
-  "version": "0.0.11-alpha",
+  "version": "0.0.12-alpha",
   "main": "./bin/index.js",
   "author": "louiswu",
   "license": "MIT",
@@ -53,6 +53,7 @@
   "keywords": [
     "serverless cloud function",
     "cli",
-    "debug"
+    "debug",
+    "Tencent Cloud"
   ]
 }
