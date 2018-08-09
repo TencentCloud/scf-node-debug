@@ -1,6 +1,6 @@
 {
   "name": "scf-cli",
-  "version": "0.0.13-alpha",
+  "version": "0.0.14-alpha",
   "main": "./bin/index.js",
   "author": "louiswu",
   "license": "MIT",
@@ -29,6 +29,9 @@
   },
   "bin": {
     "scf": "./bin/index.js"
+  },
+  "engines": {
+    "node": ">= 8.1.4"
   },
   "description": "本地测试运行云函数的小工具",
   "devDependencies": {

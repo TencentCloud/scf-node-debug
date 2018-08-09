@@ -6,6 +6,7 @@
 A cli For Test Your ServerLess Function
 We provide serveral testModels for you to config the 'event' of Your ServerLess Function
 And more properties is coming!
+This cli requires node v8.1.4 or higher for ES2015 , async function support and koa.
 
 [English DOC](./README_en.md)
 [中文版文档](./README.md)
