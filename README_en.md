@@ -2,6 +2,7 @@
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 [![NPM Version](https://img.shields.io/npm/v/scf-cli.svg?style=flat)](https://www.npmjs.com/package/scf-cli)
+[![NODE Version](https://img.shields.io/node/v/scf-cli.svg)](https://www.npmjs.com/package/scf-cli)
 
 A cli For Test Your ServerLess Function
 We provide serveral testModels for you to config the 'event' of Your ServerLess Function
