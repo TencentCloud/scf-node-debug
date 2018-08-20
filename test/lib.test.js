@@ -37,8 +37,11 @@ describe('scf lib', () => {
   describe('#test correct demo', () => {
     it('#test GET /', done => {
       let res = request(correctDemo)
-        .get('/')
-        .expect('Content-Type', /text\/plain/)
+        .post('/')
+        .expect(200)
+        .expect((res)=>{
+          assert(res.body,'hello world')
+        })
         .end(done)
     }).timeout(config.scfConfig.timeout * 1000)
   })
@@ -47,7 +50,7 @@ describe('scf lib', () => {
     it('#test GET /', done => {
       let res = request(errorDemo)
         .get('/')
-        .expect('Content-Type', /text\/plain/)
+        // .expect('Content-Type', /text\/plain/)
         .end(done)
     }).timeout(config.scfConfig.timeout * 1000)
   })
@@ -56,7 +59,7 @@ describe('scf lib', () => {
     it('#test GET /', done => {
       let res = request(timeoutDemo)
         .get('/')
-        .expect('Content-Type', /text\/plain/)
+        .expect(404)
         .end(done)
     }).timeout(config.scfConfig.timeout * 1000 * 2)
   })
