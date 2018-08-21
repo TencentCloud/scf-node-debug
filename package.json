@@ -1,6 +1,6 @@
 {
   "name": "scf-cli",
-  "version": "0.0.17-alpha",
+  "version": "0.0.18-alpha",
   "main": "./bin/index.js",
   "author": "louiswu",
   "license": "MIT",
