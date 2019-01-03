@@ -50,8 +50,12 @@ program
       message: '请输入入口文件地址(相对路径)',
       validate: function(input) {
         const scriptPath = require.resolve(path.resolve(process.cwd(), input))
+        const extname = path.extname(input)
         if (!input) {
           return '请输入入口文件地址'
+        }
+        if (!config.suffixBinMap[extname]) {
+          return '当前文件后缀不支持，目前仅支持本地测试js,python,php程序'
         }
         return true
       }

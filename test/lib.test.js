@@ -9,7 +9,7 @@ describe('scf lib', () => {
   const correctDemo = lib.init({
     port: 8082,
     scfConfig: {
-      entry: 'test/mock/correctDemo.js',
+      entry: 'test/mock/js/correctDemo.js',
       handler: 'main_handler',
       timeout: config.scfConfig.timeout,
       testModel: 'http'
@@ -18,7 +18,7 @@ describe('scf lib', () => {
   const errorDemo = lib.init({
     port: 8083,
     scfConfig: {
-      entry: 'test/mock/errorDemo.js',
+      entry: 'test/mock/js/errorDemo.js',
       handler: 'main_handler',
       timeout: config.scfConfig.timeout,
       testModel: 'cmq'
@@ -27,7 +27,7 @@ describe('scf lib', () => {
   const timeoutDemo = lib.init({
     port: 8084,
     scfConfig: {
-      entry: 'test/mock/timeoutDemo.js',
+      entry: 'test/mock/js/timeoutDemo.js',
       handler: 'main_handler',
       timeout: config.scfConfig.timeout,
       testModel: 'cmq'
@@ -39,8 +39,8 @@ describe('scf lib', () => {
       let res = request(correctDemo)
         .post('/')
         .expect(200)
-        .expect((res)=>{
-          assert(res.body,'hello world')
+        .expect(res => {
+          assert(res.body, 'hello world')
         })
         .end(done)
     }).timeout(config.scfConfig.timeout * 1000)

@@ -1,12 +1,27 @@
 {
+  "extends": ["eslint:recommended"],
   "parserOptions": {
     "ecmaVersion": 8,
+    "sourceType": "module",
     "ecmaFeatures": {
+      "jsx": false,
       "experimentalObjectRestSpread": true
     }
   },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "amd": true,
+    "node": true
+  },
+  "globals": {
+    "seajs": false,
+    "process": false
+  },
   "rules": {
+    "no-console": "off",
     "semi": ["error", "never"],
-    "quotes": ["error", "single"]
+    "quotes": ["error", "single"],
+    "no-unused-vars": "warn"
   }
 }

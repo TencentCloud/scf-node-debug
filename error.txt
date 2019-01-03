@@ -1,0 +1,12 @@
+  File "<stdin>", line 2
+    import sys
+    ^
+IndentationError: unexpected indent
+  File "<stdin>", line 2
+    import sys
+    ^
+IndentationError: unexpected indent
+  File "<stdin>", line 2
+    import sys
+    ^
+IndentationError: unexpected indent

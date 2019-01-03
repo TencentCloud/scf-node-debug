@@ -12,7 +12,7 @@ const inquirer = require('inquirer')
 // internal depend
 const binFile = require.resolve('../bin')
 const pkg = require('../package')
-const cliMock = require('./mock/cli.mock')
+const cliMock = require('./mock/js/cli.mock')
 const { getEntityByObject, validate } = require('./helper/utils')
 
 describe('scf-cli command-line test', function() {
