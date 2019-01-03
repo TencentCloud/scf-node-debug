@@ -3,6 +3,7 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 [![NPM Version](https://img.shields.io/npm/v/scf-cli.svg?style=flat)](https://www.npmjs.com/package/scf-cli)
 [![NODE Version](https://img.shields.io/node/v/scf-cli.svg)](https://www.npmjs.com/package/scf-cli)
+[![Travis CI](https://travis-ci.org/TencentCloud/scf-node-debug.svg?branch=master)](https://travis-ci.org/TencentCloud/scf-node-debug.svg?branch=master)
 
 这是一个用于本地测试运行云函数的小工具，我们提供了几种测试模型作为云函数的入参'event'，持续更新中。
 本工具需要 node8.1.4 以上版本以支持 ES2015，async function 和 koa。
@@ -43,6 +44,12 @@ scf init
   - helloworld 入参为最简单的 json 格式
   - cmq 以 cmq 的模式模拟入参
   - ckafka 以 ckafka 的模式模拟入参
+
+## 常见问题
+
+- [如何设置本地 web 代理？](https://github.com/TencentCloud/scf-node-debug/wiki/%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E6%9C%AC%E5%9C%B0web%E4%BB%A3%E7%90%86%EF%BC%9F)
+- 本地云函数的环境变量如何设置？（云函数在运行时，已经拥有了命令行启动所在进程空间的所有环境变量。）
+- [如何调试云函数的运行？](https://github.com/TencentCloud/scf-node-debug/wiki/%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95%E4%BA%91%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%90%E8%A1%8C%EF%BC%9F)
 
 ## TODO List
 
