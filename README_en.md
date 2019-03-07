@@ -9,8 +9,8 @@ We provide serveral testModels for you to config the 'event' of Your ServerLess 
 And more properties is coming!
 This cli requires node v8.1.4 or higher for ES2015 , async function support and koa.
 
-[English DOC](https://github.com/Lighting-Jack/scf-node-debug/blob/master/README_en.md)
-[中文版文档](https://github.com/Lighting-Jack/scf-node-debug/blob/master/README.md)
+[English DOC](https://github.com/TencentCloud/scf-node-debug/blob/master/README_en.md)
+[中文版文档](https://github.com/TencentCloud/scf-node-debug/blob/master/README.md)
 
 ## Installation
 

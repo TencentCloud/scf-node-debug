@@ -8,8 +8,8 @@
 这是一个用于本地测试运行云函数的小工具，我们提供了几种测试模型作为云函数的入参'event'，持续更新中。
 本工具需要 node8.1.4 以上版本以支持 ES2015，async function 和 koa。
 
-[English DOC](https://github.com/Lighting-Jack/scf-node-debug/blob/master/README_en.md)
-[中文版文档](https://github.com/Lighting-Jack/scf-node-debug/blob/master/README.md)
+[English DOC](https://github.com/TencentCloud/scf-node-debug/blob/master/README_en.md)
+[中文版文档](https://github.com/TencentCloud/scf-node-debug/blob/master/README.md)
 
 ## Installation
 
