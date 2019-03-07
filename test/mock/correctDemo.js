@@ -1,8 +1,14 @@
 'use strict'
-exports.main_handler = (event, context, callback) => {
-  let rpa = require('request-promise-any')
-  rpa('https://gank.io/api/xiandu/categories').then(json => {
-    console.log(json)
+
+const delay = (interval = 1000) => {
+  return new Promise(resolve => {
+    setTimeout(resolve, interval)
   })
-  return 123
+}
+
+exports.main_handler = (event, context, callback) => {
+  delay().then(res => {
+    callback(null, 'sync-correct')
+  })
+  return 'sync-correct'
 }

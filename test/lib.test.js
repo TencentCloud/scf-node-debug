@@ -4,6 +4,10 @@ const assert = require('assert')
 const request = require('supertest')
 const lib = require('../lib/debug/bootstrap')
 const config = require('../lib/debug/config/config.development')
+const logger = require('../lib/debug/lib/logger')
+
+logger.setLevel(-1)
+logger.setPrefix('[TEST]')
 
 describe('scf lib', () => {
   const correctDemo = lib.init({
@@ -33,24 +37,44 @@ describe('scf lib', () => {
       testModel: 'cmq'
     }
   })
+  const asyncCorrectDemo = lib.init({
+    port: 8085,
+    scfConfig: {
+      entry: 'test/mock/asyncCorrectDemo.js',
+      handler: 'main_handler',
+      timeout: config.scfConfig.timeout,
+      testModel: 'http'
+    }
+  })
 
-  describe('#test correct demo', () => {
+  const asyncErrorDemo = lib.init({
+    port: 8086,
+    scfConfig: {
+      entry: 'test/mock/asyncErrorDemo.js',
+      handler: 'main_handler',
+      timeout: config.scfConfig.timeout,
+      testModel: 'http'
+    }
+  })
+
+  describe('#test sync correct demo', () => {
     it('#test GET /', done => {
       let res = request(correctDemo)
-        .post('/')
-        .expect(200)
-        .expect((res)=>{
-          assert(res.body,'hello world')
+        .get('/')
+        .expect(res => {
+          assert.equal(res.text, 'sync-correct', 'sync correct demo')
         })
         .end(done)
     }).timeout(config.scfConfig.timeout * 1000)
   })
 
-  describe('#test error demo', () => {
+  describe('#test sync error demo', () => {
     it('#test GET /', done => {
       let res = request(errorDemo)
         .get('/')
-        // .expect('Content-Type', /text\/plain/)
+        .expect(res => {
+          assert.equal(res.body.data, undefined)
+        })
         .end(done)
     }).timeout(config.scfConfig.timeout * 1000)
   })
@@ -60,6 +84,28 @@ describe('scf lib', () => {
       let res = request(timeoutDemo)
         .get('/')
         .expect(404)
+        .end(done)
+    }).timeout(config.scfConfig.timeout * 1000 * 2)
+  })
+
+  describe('#test async correct demo', () => {
+    it('#test GET /', done => {
+      let res = request(asyncCorrectDemo)
+        .get('/')
+        .expect(res => {
+          assert.equal(res.text, 'async-correct')
+        })
+        .end(done)
+    }).timeout(config.scfConfig.timeout * 1000 * 2)
+  })
+
+  describe('#test async error demo', () => {
+    it('#test GET /', done => {
+      let res = request(asyncErrorDemo)
+        .get('/')
+        .expect(res => {
+          assert.equal(res.body.data, undefined)
+        })
         .end(done)
     }).timeout(config.scfConfig.timeout * 1000 * 2)
   })
