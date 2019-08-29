@@ -5,7 +5,7 @@
 [![NODE Version](https://img.shields.io/node/v/scf-cli.svg)](https://www.npmjs.com/package/scf-cli)
 [![Travis CI](https://travis-ci.org/TencentCloud/scf-node-debug.svg?branch=master)](https://travis-ci.org/TencentCloud/scf-node-debug.svg?branch=master)
 
-这是一个用于本地测试运行云函数的小工具，我们提供了几种测试模型作为云函数的入参'event'，持续更新中。
+这是一个用于本地测试运行云函数的小工具，我们提供了几种测试模型作为云函数的入参'event'。
 本工具需要 node8.1.4 以上版本以支持 ES2015，async function 和 koa。
 
 [English DOC](https://github.com/TencentCloud/scf-node-debug/blob/master/README_en.md)
@@ -50,6 +50,7 @@ scf init
 - [如何设置本地 web 代理？](https://github.com/TencentCloud/scf-node-debug/wiki/%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E6%9C%AC%E5%9C%B0web%E4%BB%A3%E7%90%86%EF%BC%9F)
 - 本地云函数的环境变量如何设置？（云函数在运行时，已经拥有了命令行启动所在进程空间的所有环境变量。）
 - [如何调试云函数的运行？](https://github.com/TencentCloud/scf-node-debug/wiki/%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95%E4%BA%91%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%90%E8%A1%8C%EF%BC%9F)
+- [如何本地测试更多不同语言编写的云函数？](https://github.com/tencentyun/scfcli)
 
 ## TODO List
 
